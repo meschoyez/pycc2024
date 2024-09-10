@@ -1,0 +1,11 @@
+*~
+#*
+target
+.antlr
+__pycache__
+comp24*.java
+comp24*.py
+*.out
+*.class
+*.jar
+*.tokens
