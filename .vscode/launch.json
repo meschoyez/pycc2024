@@ -11,9 +11,9 @@
             // Archivo con la gramatica
             "grammar": "${file}",
             // Archivo a parsear
-            "input": "input/miniC.txt",
+            "input": "input/aritmetica.txt",
             // Simbolo inicial
-            "startRule": "declaracion",
+            "startRule": "programa",
             // Muestra Arbol Sintactico
             "printParseTree": true,
             "visualParseTree": true

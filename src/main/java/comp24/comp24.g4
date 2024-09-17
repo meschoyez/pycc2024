@@ -17,6 +17,11 @@ PC : ')' ;
 LLA : '{' ;
 LLC : '}' ;
 ASIG  : '=' ;
+SUMA  : '+' ;
+RESTA : '-' ;
+MULT  : '*' ;
+DIV   : '/' ;
+MOD   : '%' ;
 IGUAL : '==' ;
 
 // LINEA : (LETRA | DIGITO | [ {}()=;+*])*'\n' ;
@@ -53,6 +58,7 @@ instrucciones : instruccion instrucciones
 instruccion : declaracion
             | iwhile
             | bloque
+            | exp
             ;
 
 bloque : LLA instrucciones LLC ;
@@ -62,3 +68,26 @@ declaracion : INT ID PYC ;
 iwhile : WHILE PA opal PC instruccion;
 
 opal : ID ;
+
+// a + b / (c + d)
+exp : term e ;
+
+e : SUMA  term e
+  | RESTA term e
+  |
+  ;
+
+term : factor t ;
+
+t : MULT factor t
+  | DIV  factor t
+  | MOD  factor t
+  |
+  ;
+
+factor : NUMERO
+       | ID
+       | PA exp PC
+       ;
+
+

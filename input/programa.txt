@@ -1,3 +1,15 @@
+int x;
+int y;
+
+while (x)
+    int a;
+
+while (x) {
+    int p;
+    int q;
+}
+
+
 int funcion (int x);
 
 int main () {

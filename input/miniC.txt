@@ -1,6 +1,5 @@
-int alice = 0;
+int alice;
 while (alice) {
-
 }
 
 while (pepe)
