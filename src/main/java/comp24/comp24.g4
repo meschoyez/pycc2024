@@ -63,7 +63,6 @@ instruccion : declaracion
             | asignacion PYC
             | iwhile
             | bloque
-            | exp
             ;
 
 bloque : LLA instrucciones LLC ;

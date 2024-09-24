@@ -1,0 +1,23 @@
+Tabla de Símbolos
+
+Almacena las definiciones del usuario.
+
+Almacena para cada ID:
+  - Texto asociado
+  - Tipo de dato
+  - Contexto donde vive
+  - Inicializada
+  - Usada
+
+Admás, para los ID de función:
+  - Lista de tipo de dato de los argumentos
+
+
+Funcionalidades de la Tabla de Símbolos
+  - Agregar ID
+  - Buscar ID global
+  - Buscar ID local
+  - Agregar Contexto
+  - Borrar Contexto
+
+
