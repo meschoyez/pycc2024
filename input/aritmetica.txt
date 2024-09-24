@@ -1,9 +1,12 @@
-a + b
+int x;
+int y = 0;
+int a, b, c;
+int o, p = 1, q, r, s = 1;
 
-4 + 5 * 10 / 2 - 6
+a = 5;
 
-y * 5 - z
+b = a ;
 
-x
+c = a + b ;
 
-5
+z = 4 + 5 * 10 / 2 - 6 ;

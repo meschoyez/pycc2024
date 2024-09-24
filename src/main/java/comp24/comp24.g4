@@ -10,12 +10,16 @@ fragment DIGITO : [0-9] ;
 FOR   : 'for' ;
 WHILE : 'while' ;
 INT   : 'int' ;
+DOUBLE : 'double' ;
+CHAR  : 'char' ;
+VOID  : 'void' ;
 
-PYC : ';' ;
-PA : '(' ;
-PC : ')' ;
-LLA : '{' ;
-LLC : '}' ;
+COMA  : ',' ;
+PYC   : ';' ;
+PA    : '(' ;
+PC    : ')' ;
+LLA   : '{' ;
+LLC   : '}' ;
 ASIG  : '=' ;
 SUMA  : '+' ;
 RESTA : '-' ;
@@ -56,6 +60,7 @@ instrucciones : instruccion instrucciones
 // instruccion : LINEA { System.out.println("LINEA ->" + $LINEA.getText() + "<--"); } ;
 
 instruccion : declaracion
+            | asignacion PYC
             | iwhile
             | bloque
             | exp
@@ -63,11 +68,27 @@ instruccion : declaracion
 
 bloque : LLA instrucciones LLC ;
 
-declaracion : INT ID PYC ;
+declaracion : tdato ID inic lvars PYC ;
+
+tdato : INT
+      | DOUBLE
+      | CHAR
+      | VOID
+      ;
+
+inic : ASIG opal
+     |
+     ;
+
+lvars : COMA ID inic lvars
+      |
+      ;
+
+asignacion : ID ASIG opal ;
 
 iwhile : WHILE PA opal PC instruccion;
 
-opal : ID ;
+opal : exp ;
 
 // a + b / (c + d)
 exp : term e ;
