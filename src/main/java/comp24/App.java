@@ -13,7 +13,8 @@ public class App {
         // CharStream input = CharStreams.fromFileName("input/entrada.txt");
         // CharStream input = CharStreams.fromFileName("input/parentesis.txt");
         // CharStream input = CharStreams.fromFileName("input/programa.txt");
-        CharStream input = CharStreams.fromFileName("input/miniC.txt");
+        // CharStream input = CharStreams.fromFileName("input/miniC.txt");
+        CharStream input = CharStreams.fromFileName("input/aritmetica.txt");
 
         // create a lexer that feeds off of input CharStream
         comp24Lexer lexer = new comp24Lexer(input);
@@ -25,15 +26,15 @@ public class App {
         comp24Parser parser = new comp24Parser(tokens);
                 
         // create Listener
-        // ExpRegBaseListener escucha = new Escucha();
+        comp24BaseListener escucha = new Escucha();
 
         // Conecto el objeto con Listeners al parser
-        // parser.addParseListener(escucha);
+        parser.addParseListener(escucha);
 
         // Solicito al parser que comience indicando una regla gramatical
         // En este caso la regla es el simbolo inicial
         parser.programa();
-        // ParseTree tree =  parser.s();
+        // ParseTree tree = parser.programa();
         // Conectamos el visitor
         // Caminante visitor = new Caminante();
         // visitor.visit(tree);
