@@ -13,8 +13,8 @@ public class App {
         // CharStream input = CharStreams.fromFileName("input/entrada.txt");
         // CharStream input = CharStreams.fromFileName("input/parentesis.txt");
         // CharStream input = CharStreams.fromFileName("input/programa.txt");
-        // CharStream input = CharStreams.fromFileName("input/miniC.txt");
-        CharStream input = CharStreams.fromFileName("input/aritmetica.txt");
+        CharStream input = CharStreams.fromFileName("input/miniC.txt");
+        // CharStream input = CharStreams.fromFileName("input/aritmetica.txt");
 
         // create a lexer that feeds off of input CharStream
         comp24Lexer lexer = new comp24Lexer(input);
@@ -33,11 +33,11 @@ public class App {
 
         // Solicito al parser que comience indicando una regla gramatical
         // En este caso la regla es el simbolo inicial
-        parser.programa();
-        // ParseTree tree = parser.programa();
+        // parser.programa();
+        ParseTree tree = parser.programa();
         // Conectamos el visitor
-        // Caminante visitor = new Caminante();
-        // visitor.visit(tree);
+        Walker visitor = new Walker();
+        visitor.visit(tree);
         // System.out.println(visitor);
         // System.out.println(visitor.getErrorNodes());
         // Imprime el arbol obtenido

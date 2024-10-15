@@ -3,7 +3,7 @@
 skinparam ClassAttributeIconSize 0
 hide circle
 
-class TablaSimbolos {
+class TablaSimbolos <<Singleton>> {
     - List<Contexto> contextos
     + addContexto ()
     + delContexto ()
